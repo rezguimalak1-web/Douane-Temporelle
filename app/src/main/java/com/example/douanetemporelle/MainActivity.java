@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    // Remplacer par les 4 derniers chiffres du matricule étudiant
+    // Houni n7ottou ekher 4 ar9am mel matricule mta3 etudiant.
     private static final String MATRICULE = "9203";
 
     private EditText nomVoyageur;
@@ -25,14 +25,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Récupération des éléments de l'interface
+        // Njibou les elements mel interface XML.
         nomVoyageur = findViewById(R.id.et_nom_rm);
         anneeNaissance = findViewById(R.id.et_naissance_rm);
         anneeDestination = findViewById(R.id.et_destination_rm);
         motifVoyage = findViewById(R.id.sp_motif_rm);
         boutonInspecter = findViewById(R.id.btn_inspecter_rm);
 
-        // Création de la liste des motifs de voyage
+        // Houni na3mlou liste mta3 asbeb el voyage.
         String[] motifs = {
                 "Tourisme",
                 "Modification du passé",
@@ -51,14 +51,14 @@ public class MainActivity extends Activity {
 
         motifVoyage.setAdapter(adaptateur);
 
-        // Action du bouton Inspecter le profil
+        // Ki el voyageur yenzel 3al bouton Inspecter le profil.
         boutonInspecter.setOnClickListener(v -> {
 
             String nom = nomVoyageur.getText().toString().trim();
             String naissance = anneeNaissance.getText().toString().trim();
             String destination = anneeDestination.getText().toString().trim();
 
-            // Vérification des champs obligatoires
+            // Nthabtou elli les champs el kol ma3abbin.
             if (nom.isEmpty() || naissance.isEmpty() || destination.isEmpty()) {
                 Toast.makeText(
                         MainActivity.this,
@@ -71,7 +71,7 @@ public class MainActivity extends Activity {
             int anneeNaissanceInt;
             int anneeDestinationInt;
 
-            // Conversion des années en nombres entiers
+            // Nbadlou les annees men texte l ar9am s7a7.
             try {
                 anneeNaissanceInt = Integer.parseInt(naissance);
                 anneeDestinationInt = Integer.parseInt(destination);
@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
                 return;
             }
 
-            // Vérification des années
+            // Nthabtou elli les annees akber men sifr.
             if (anneeNaissanceInt <= 0 || anneeDestinationInt <= 0) {
                 Toast.makeText(
                         MainActivity.this,
@@ -96,13 +96,13 @@ public class MainActivity extends Activity {
 
             String motif = motifVoyage.getSelectedItem().toString();
 
-            // Création d'un Intent explicite vers VerificationActivity
+            // Na3mlou Intent explicite bech nemchiw lel VerificationActivity.
             Intent intent = new Intent(
                     MainActivity.this,
                     VerificationActivity.class
             );
 
-            // Transmission des informations du voyageur
+            // Nab3thou ma3loumet el voyageur lel activite 2.
             intent.putExtra(ExtraKeys.key(MATRICULE, "NOM_VOYAGEUR"), nom);
             intent.putExtra(ExtraKeys.key(MATRICULE, "ANNEE_NAISSANCE"), anneeNaissanceInt);
             intent.putExtra(ExtraKeys.key(MATRICULE, "ANNEE_DESTINATION"), anneeDestinationInt);
