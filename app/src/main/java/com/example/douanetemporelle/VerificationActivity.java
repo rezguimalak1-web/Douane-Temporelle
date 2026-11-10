@@ -72,7 +72,7 @@ public class VerificationActivity extends Activity {
         // Njibou les deux boutons mel interface.
         Button boutonApprouver = findViewById(R.id.btn_approuver_rm);
         Button boutonRefuser = findViewById(R.id.btn_refuser_rm);
-        // تعطيل زر الموافقة إذا كان السفر لتغيير الماضي والعمر الزمني عددا أوليا
+        // Ndesactiviw bouton Approuver ken el motif Modification du passé wel 3omr temporel nombre premier.
         if ("Modification du passé".equals(motif) && estPremier(ageTemporel)) {
             boutonApprouver.setEnabled(false);
         }
@@ -84,7 +84,7 @@ public class VerificationActivity extends Activity {
                     ResultActivity.class
             );
 
-            // إرسال الحكم النهائي واسم المسافر إلى النشاط الثالث
+            // Nab3thou el decision wel esm mta3 el voyageur lel activite theltha.
             resultat.putExtra(
                     ExtraKeys.key(MATRICULE, "DECISION"),
                     true
@@ -105,7 +105,7 @@ public class VerificationActivity extends Activity {
                     ResultActivity.class
             );
 
-            // إرسال قرار الرفض واسم المسافر إلى النشاط الثالث
+            // Nab3thou decision mta3 el refus wel esm lel activite theltha.
             resultat.putExtra(
                     ExtraKeys.key(MATRICULE, "DECISION"),
                     false
@@ -119,7 +119,7 @@ public class VerificationActivity extends Activity {
             startActivity(resultat);
         });
     }
-    // التحقق مما إذا كان العدد أوليا
+    // Nthabtou ken el 3adad nombre premier.
     private boolean estPremier(int nombre) {
         if (nombre < 2) {
             return false;
