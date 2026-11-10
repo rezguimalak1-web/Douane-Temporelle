@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_verification_rm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layoutDirection="ltr"
+    android:baselineAligned="false"
+    android:weightSum="1"
+    android:padding="12dp"
+    android:background="#F5EEDC">
+
+    <!-- El image te5ou 30% mel largeur. -->
+    <ImageView
+        android:id="@+id/img_passeport_rm"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:padding="12dp"
+        android:src="@android:drawable/ic_menu_recent_history"
+        android:scaleType="fitCenter"
+        android:contentDescription="Horloge du passeport temporel" />
+
+    <!-- El partie mta3 les informations te5ou 70% mel largeur. -->
+    <RelativeLayout
+        android:id="@+id/relative_passeport_rm"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:padding="12dp"
+        android:background="#FFFFFF">
+        <!-- Houni n7ottou titre el passeport. -->
+        <TextView
+            android:id="@+id/tv_titre_passeport_rm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PASSEPORT TEMPOREL"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#17354A"
+            android:gravity="center" />
+
+        <!-- Houni bech naffichiw les donnees elli jeyin mel activite 1. -->
+        <TextView
+            android:id="@+id/tv_resume_rm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_titre_passeport_rm"
+            android:layout_marginTop="20dp"
+            android:textSize="17sp"
+            android:textColor="#17354A" />
+        <!-- Houni nwarriw ken fama risque de paradoxe. -->
+        <TextView
+            android:id="@+id/tv_risque_rm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_resume_rm"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#17354A" />
+
+        <!-- Bouton bech n9ablou el voyage. -->
+        <Button
+            android:id="@+id/btn_approuver_rm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_risque_rm"
+            android:layout_marginTop="20dp"
+            android:text="Approuver le saut temporel"
+            android:textAllCaps="false" />
+
+        <!-- Bouton bech norfdhou el voyage. -->
+        <Button
+            android:id="@+id/btn_refuser_rm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_approuver_rm"
+            android:layout_marginTop="8dp"
+            android:text="Refuser (Risque de paradoxe)"
+            android:textAllCaps="false" />
+    </RelativeLayout>
+
+</LinearLayout>
