@@ -22,6 +22,7 @@
             android:layout_marginBottom="30dp" />
 
         <TextView
+            android:id="@+id/tv_nom_label_rm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nom du voyageur"
@@ -35,6 +36,7 @@
             android:inputType="textPersonName" />
 
         <TextView
+            android:id="@+id/tv_naissance_label_rm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Année de naissance"
@@ -48,12 +50,15 @@
             android:hint="Exemple : 1990"
             android:inputType="number" />
 
+
         <TextView
+            android:id="@+id/tv_destination_label_rm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Année de destination"
             android:textSize="16sp"
             android:layout_marginTop="15dp" />
+
 
         <EditText
             android:id="@+id/et_destination_rm"
@@ -63,6 +68,7 @@
             android:inputType="number" />
 
         <TextView
+            android:id="@+id/tv_motif_label_rm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Motif du voyage"

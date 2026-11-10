@@ -2,7 +2,7 @@ package com.example.douanetemporelle;
 
 public class ExtraKeys {
 
-    // Construction des clés à partir du matricule
+    // Houni nsan3ou les cles mel 4 ar9am lokhrin mta3 el matricule.
     public static String key(String matricule, String suffix) {
 
         if (matricule == null || matricule.length() < 4) {
