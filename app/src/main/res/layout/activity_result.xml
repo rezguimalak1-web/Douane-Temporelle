@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_resultat_rm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
+    <!-- Houni n'affichiw titre el verdict. -->
+    <TextView
+        android:id="@+id/tv_titre_resultat_rm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VERDICT TEMPOREL"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:layout_marginBottom="35dp" />
+
+    <!-- Houni n'affichiw el message selon el verdict. -->
+    <TextView
+        android:id="@+id/tv_message_resultat_rm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:layout_marginBottom="45dp" />
+
+    <!-- Bouton bech narj3ou lel formulaire. -->
+    <Button
+        android:id="@+id/btn_nouveau_voyageur_rm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nouveau voyageur"
+        android:textAllCaps="false" />
+
+</LinearLayout>
