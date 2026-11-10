@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Button;
+
 
 public class VerificationActivity extends Activity {
 
@@ -66,5 +68,69 @@ public class VerificationActivity extends Activity {
                         + "\n\nMotif : " + motif;
 
         resume.setText(texteResume);
+
+        // Njibou les deux boutons mel interface.
+        Button boutonApprouver = findViewById(R.id.btn_approuver_rm);
+        Button boutonRefuser = findViewById(R.id.btn_refuser_rm);
+        // تعطيل زر الموافقة إذا كان السفر لتغيير الماضي والعمر الزمني عددا أوليا
+        if ("Modification du passé".equals(motif) && estPremier(ageTemporel)) {
+            boutonApprouver.setEnabled(false);
+        }
+
+// Ki el voyageur yenzel 3al bouton Approuver.
+        boutonApprouver.setOnClickListener(v -> {
+            Intent resultat = new Intent(
+                    VerificationActivity.this,
+                    ResultActivity.class
+            );
+
+            // إرسال الحكم النهائي واسم المسافر إلى النشاط الثالث
+            resultat.putExtra(
+                    ExtraKeys.key(MATRICULE, "DECISION"),
+                    true
+            );
+
+            resultat.putExtra(
+                    ExtraKeys.key(MATRICULE, "NOM_VOYAGEUR"),
+                    nom
+            );
+
+            startActivity(resultat);
+        });
+
+// Ki el voyageur yenzel 3al bouton Refuser.
+        boutonRefuser.setOnClickListener(v -> {
+            Intent resultat = new Intent(
+                    VerificationActivity.this,
+                    ResultActivity.class
+            );
+
+            // إرسال قرار الرفض واسم المسافر إلى النشاط الثالث
+            resultat.putExtra(
+                    ExtraKeys.key(MATRICULE, "DECISION"),
+                    false
+            );
+
+            resultat.putExtra(
+                    ExtraKeys.key(MATRICULE, "NOM_VOYAGEUR"),
+                    nom
+            );
+
+            startActivity(resultat);
+        });
+    }
+    // التحقق مما إذا كان العدد أوليا
+    private boolean estPremier(int nombre) {
+        if (nombre < 2) {
+            return false;
+        }
+
+        for (int i = 2; i <= nombre / i; i++) {
+            if (nombre % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
